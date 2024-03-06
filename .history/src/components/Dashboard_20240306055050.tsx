@@ -2,7 +2,6 @@
 
 
 
-
 // Dashboard.tsx
 import React from 'react';
 import { Box, Text, SimpleGrid, Flex } from '@chakra-ui/react';
@@ -42,17 +41,16 @@ const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, index, isCu
       fontSize="2xl"
       color="white"
       backgroundColor={backgroundColor}
-      display="inline-flex"
-      flexDirection="column"
-      alignItems="center"
     >
-      <Flex alignItems="center">
-        <IconComponent size={40} mb="-2" fontWeight="bold" />
-        <Text fontWeight="bold" ml="2" mr="2">
-          {title}
-        </Text>
+      <Flex direction="row" align="center">
+        <IconComponent size={30} mr="4" />
+        <Flex direction="column" align="flex-start" justify="center">
+          <Text fontWeight="bold" mb="2" mt="2">
+            {title}
+          </Text>
+          <Text>{formattedValue}</Text>
+        </Flex>
       </Flex>
-      <Text>{formattedValue}</Text>
     </Box>
   );
 };
@@ -87,6 +85,7 @@ const Dashboard: React.FC = () => {
 };
 
 export default Dashboard;
+
 
 
 
