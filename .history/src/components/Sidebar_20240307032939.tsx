@@ -2,9 +2,18 @@ import React, { useState } from 'react';
 import {
   FaTh,
   FaBars,
+  FaUserAlt,
+  FaRegChartBar,
+  FaCommentAlt,
   FaShoppingBag,
+  FaTags,
+  FaClipboardList,
+  FaShoppingCart,
 } from 'react-icons/fa';
-
+import { RiAdminFill } from 'react-icons/ri';
+import { AiOutlineSafetyCertificate } from 'react-icons/ai';
+import { BsPerson } from 'react-icons/bs';
+import { IoIosContacts } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
 import { Box, IconButton, Text, Flex } from '@chakra-ui/react';
 
