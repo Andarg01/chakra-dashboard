@@ -1,10 +1,15 @@
-
-
-
 // Dashboard.tsx
 import React from 'react';
 import { Box, Text, SimpleGrid, Flex } from '@chakra-ui/react';
-import { GiShoppingCart, GiCash, GiReceiveMoney, GiTwoCoins, GiShoppingBag, GiMultipleTargets } from 'react-icons/gi';
+import { IconBaseProps } from 'react-icons';
+import {
+  GiShoppingCart,
+  GiCash,
+  GiReceiveMoney,
+  GiTwoCoins,
+  GiShoppingBag,
+  GiMultipleTargets
+} from 'react-icons/gi';
 
 interface DashboardCardProps {
   title: string;
@@ -13,7 +18,7 @@ interface DashboardCardProps {
   isCurrency?: boolean;
 }
 
-const iconComponents = [
+const iconComponents: React.ComponentType<IconBaseProps>[] = [
   GiShoppingCart,   // Total Orders
   GiCash,           // Total Sales
   GiReceiveMoney,   // Total Revenue
@@ -22,10 +27,20 @@ const iconComponents = [
   GiMultipleTargets // Total Categories
 ];
 
+const iconTitles: string[] = [
+  'Total Orders',
+  'Total Sales',
+  'Total Revenue',
+  'Total Customer Commits',
+  'Total Products',
+  'Total Categories'
+];
+
 const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, index, isCurrency = false }) => {
   const IconComponent = iconComponents[index];
 
-  const formattedValue = isCurrency ? `Birr ${value.toLocaleString()}` : value;
+  // Ensure that value is not undefined before calling toLocaleString
+  const formattedValue = isCurrency ? `Birr ${value?.toLocaleString()}` : value;
 
   return (
     <Box
@@ -35,19 +50,20 @@ const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, index, isCu
       borderColor="gray.200"
       boxShadow="xl"
       textAlign="center"
-      minH={`calc(100px + 1/3 * 100px)`} // Maximize height and add 1/3 of the size
+      minH={`calc(100px + 1/3 * 100px)`}
       fontSize="2xl"
-      color="black" // Set text color to black
+      color="black"
       display="inline-flex"
       flexDirection="column"
       alignItems="center"
     >
       <Flex alignItems="center">
-        <IconComponent size={40}  fontWeight="bold" />
+        <IconComponent size={40} fontWeight="bold" />
         <Text fontWeight="bold" ml="2" mr="2">
           {title}
         </Text>
       </Flex>
+      {/* Display the formatted value */}
       <Text>{formattedValue}</Text>
     </Box>
   );
@@ -71,12 +87,15 @@ const Dashboard: React.FC = () => {
       </Text>
 
       <SimpleGrid columns={[1, 2, 3, 3]} spacing="4">
-        <DashboardCard title="Total Orders" value={metricsData.totalOrders} index={0} />
-        <DashboardCard title="Total Sales" value={metricsData.totalSales} index={1} isCurrency />
-        <DashboardCard title="Total Revenue" value={metricsData.totalRevenue} index={2} isCurrency />
-        <DashboardCard title="Total Customer Commits" value={metricsData.totalCustomerCommits} index={3} />
-        <DashboardCard title="Total Products" value={metricsData.totalProducts} index={4} />
-        <DashboardCard title="Total Categories" value={metricsData.totalCategories} index={5} />
+        {iconComponents.map((IconComponent, index) => (
+          <DashboardCard
+            key={index}
+            title={iconTitles[index]}
+            value={metricsData[`total${iconTitles[index].replace(/\s/g, '')}`.toLowerCase() as keyof typeof metricsData]}
+            index={index}
+            isCurrency={index === 1 || index === 2} // Assuming index 1 and 2 represent currency values
+          />
+        ))}
       </SimpleGrid>
     </Box>
   );

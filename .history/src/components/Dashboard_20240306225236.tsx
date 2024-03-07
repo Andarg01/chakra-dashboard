@@ -1,6 +1,5 @@
 
 
-
 // Dashboard.tsx
 import React from 'react';
 import { Box, Text, SimpleGrid, Flex } from '@chakra-ui/react';
@@ -43,7 +42,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, index, isCu
       alignItems="center"
     >
       <Flex alignItems="center">
-        <IconComponent size={40}  fontWeight="bold" />
+        <IconComponent size={40} fontWeight="bold" />
         <Text fontWeight="bold" ml="2" mr="2">
           {title}
         </Text>
@@ -71,20 +70,21 @@ const Dashboard: React.FC = () => {
       </Text>
 
       <SimpleGrid columns={[1, 2, 3, 3]} spacing="4">
-        <DashboardCard title="Total Orders" value={metricsData.totalOrders} index={0} />
-        <DashboardCard title="Total Sales" value={metricsData.totalSales} index={1} isCurrency />
-        <DashboardCard title="Total Revenue" value={metricsData.totalRevenue} index={2} isCurrency />
-        <DashboardCard title="Total Customer Commits" value={metricsData.totalCustomerCommits} index={3} />
-        <DashboardCard title="Total Products" value={metricsData.totalProducts} index={4} />
-        <DashboardCard title="Total Categories" value={metricsData.totalCategories} index={5} />
+        {iconComponents.map((IconComponent, index) => (
+          <DashboardCard
+            key={index}
+            title={`Total ${IconComponent.displayName}`}
+            value={metricsData[`total${IconComponent.displayName}`.toLowerCase()]}
+            index={index}
+            isCurrency={index === 1 || index === 2} // Assuming index 1 and 2 represent currency values
+          />
+        ))}
       </SimpleGrid>
     </Box>
   );
 };
 
 export default Dashboard;
-
-
 
 
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ProductTable from './ProductTable';
-import ProductModal from './ProductModal';
+import ProductTable from '../components/ProductTable';
+import ProductModal from '../components/ProductModal';
 import { FaSort, FaSortUp, FaSortDown } from 'react-icons/fa';
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 
@@ -235,6 +235,7 @@ const ProductList: React.FC = () => {
       >
         Add Product
       </Button>
+      
 
       <ProductTable
         products={currentItems}
@@ -248,6 +249,7 @@ const ProductList: React.FC = () => {
         getSortIcon={getSortIcon}
         onFilter={handleFilter}
       />
+      
 
       <Flex justify="center" align="center" mt="4">
         <Button
@@ -289,7 +291,7 @@ const ProductList: React.FC = () => {
         </Button>
       </Flex>
    
-      {deleteConfirmation && (
+      {/* {deleteConfirmation && (
   <Box
     className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center"
   >
@@ -316,7 +318,7 @@ const ProductList: React.FC = () => {
       </Button>
     </Box>
   </Box>
-)}
+)} */}
 
      
 

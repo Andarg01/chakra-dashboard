@@ -72,12 +72,11 @@ const Sidebar: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           />
         </Flex>
         {menuItems.map((item, index) => (
-          <NavLink to={item.path} key={index} className="link">
+          <NavLink to={item.path} key={index} className="link" activeClassName="active">
             <Flex
               p="10px 15px"
               color="#37305F"
               _hover={{ bgColor: '#37305F', color: '#fff', margin: '10px', borderRadius: '10px' }}
-              _active={{ bgColor: '#37305F', color: '#fff', margin: '10px', borderRadius: '10px' }}
             >
               <Box className="icon" marginRight="3">
                 {item.icon}

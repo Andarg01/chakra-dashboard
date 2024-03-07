@@ -43,7 +43,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, index, isCu
       alignItems="center"
     >
       <Flex alignItems="center">
-        <IconComponent size={40}  fontWeight="bold" />
+        <IconComponent size={40} mb="-2" fontWeight="bold" />
         <Text fontWeight="bold" ml="2" mr="2">
           {title}
         </Text>

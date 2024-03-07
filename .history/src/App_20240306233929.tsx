@@ -1,21 +1,12 @@
 import React from 'react'
 import ProductList from './pages/ProductList'
 import Dashboard from './components/Dashboard'
-import Sidebar from './components/Sidebar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 const App = () => {
   return (
     <div>
-    <BrowserRouter>
-    <Sidebar>
-      <Routes>
-      <Route path="/" element={<Dashboard />}/>
-      <Route path="/dashboard" element={<Dashboard />}/>
-      <Route path="/product" element={<ProductList />}/>
-      
-      </Routes>
-    </Sidebar>
-  </BrowserRouter>
+      <ProductList/>
+      <Dashboard/>
     </div>
   )
 }

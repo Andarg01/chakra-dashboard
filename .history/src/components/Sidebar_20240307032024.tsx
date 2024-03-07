@@ -44,7 +44,7 @@ const Sidebar: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <Flex>
       <Box
-        width={isOpen ? '200px' : '50px'}
+        width={isOpen ? '200px' : '100px'}
         bg="#fff"
         boxShadow="5px 5px 4px rgb(212, 212, 212)"
         color="#000"

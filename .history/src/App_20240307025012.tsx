@@ -9,7 +9,6 @@ const App = () => {
     <BrowserRouter>
     <Sidebar>
       <Routes>
-      <Route path="/" element={<Dashboard />}/>
       <Route path="/dashboard" element={<Dashboard />}/>
       <Route path="/product" element={<ProductList />}/>
       

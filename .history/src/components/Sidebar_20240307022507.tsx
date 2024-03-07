@@ -29,16 +29,7 @@ const Sidebar: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   const menuItems: MenuItem[] = [
-    {
-      path: '/',
-      name: 'Dashboard',
-      icon: <FaTh />,
-    },
-    {
-      path: '/product',
-      name: 'Product',
-      icon: <FaShoppingBag />,
-    },
+    // ... (unchanged)
   ];
 
   return (
@@ -72,21 +63,14 @@ const Sidebar: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           />
         </Flex>
         {menuItems.map((item, index) => (
-          <NavLink to={item.path} key={index} className="link">
+          <NavLink to={item.path} key={index} className="link" activeClassName="active">
             <Flex
               p="10px 15px"
               color="#37305F"
               _hover={{ bgColor: '#37305F', color: '#fff', margin: '10px', borderRadius: '10px' }}
-              _active={{ bgColor: '#37305F', color: '#fff', margin: '10px', borderRadius: '10px' }}
             >
-              <Box className="icon" marginRight="3">
-                {item.icon}
-              </Box>
-              <Text
-                display={isOpen ? 'block' : 'none'}
-                className="link_text text-sm"
-                marginLeft="3"
-              >
+              <Box className="icon">{item.icon}</Box>
+              <Text display={isOpen ? 'block' : 'none'} className="link_text text-sm">
                 {item.name}
               </Text>
             </Flex>
