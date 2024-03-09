@@ -7,7 +7,6 @@ import {
   FaTh,
   FaBars,
   FaShoppingBag,
-  FaRegChartBar,
 } from 'react-icons/fa';
 
 import { NavLink } from 'react-router-dom';
@@ -30,11 +29,6 @@ const Sidebar: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
       name: 'Dashboard',
       icon: <FaTh />,
     },
-    {
-      path: '/analytics',
-      name: 'Analytics',
-      icon: <FaRegChartBar />,
-  },
     {
       path: '/product',
       name: 'Product',
