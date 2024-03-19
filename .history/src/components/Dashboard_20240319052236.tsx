@@ -141,8 +141,48 @@ const Dashboard: React.FC = () => {
       {/* <ShopsCategoriesReviewsPage/> */}
       
       {/* Product Statistics */}
+      <Box
+  flex="1"
+  boxShadow="xl"
+  borderRadius="lg"
+  p={6}
+  m={4}
+  maxW="600px"
+  textAlign="center"
+>
+  <Text fontSize="xl" mb={4}>
+    {product.name}
+  </Text>
+  <Text fontSize="lg" mb={2}>
+    Price: ${product.price}
+  </Text>
+  <Text fontSize="md" mb={2}>
+    Description: {product.description}
+  </Text>
+  <Text fontSize="md" mb={2}>
+    Brand: {product.brand}
+  </Text>
+  <Text fontSize="md" mb={2}>
+    Stock Quantity: {product.stockQuantity}
+  </Text>
+  <Text fontSize="md" mb={2}>
+    Dimensions: {product.dimensions.join(", ")}
+  </Text>
+  <Text fontSize="md" mb={2}>
+    Weight: {product.weight.join(", ")}
+  </Text>
+  <Text fontSize="md" mb={2}>
+    Color: {product.color.join(", ")}
+  </Text>
+  <BarChart width={300} height={250} data={productData}>
+    <Tooltip />
+    <Legend />
+    <Bar dataKey="count" fill="#00800080" />
+  </BarChart>
+</Box>
 
-       <Box
+
+       {/* <Box
         flex="1"
         
         boxShadow="xl"
@@ -161,7 +201,7 @@ const Dashboard: React.FC = () => {
           <Legend />
           <Bar dataKey="count" fill="#00800080"  />
         </BarChart>
-      </Box> 
+      </Box>  */}
 
       {/* Shop Statistics */}
       <Box

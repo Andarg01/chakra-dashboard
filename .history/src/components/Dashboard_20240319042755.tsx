@@ -115,7 +115,7 @@ const Dashboard: React.FC = () => {
       </Box>
       <Box
        flex="1"
-      //  boxShadow="xl"
+       boxShadow="xl"
        borderRadius="lg"
        p={6}
        m={4}
@@ -136,7 +136,16 @@ const Dashboard: React.FC = () => {
    
       </Box>
 
-   
+      <Box
+        flex="1"
+        
+        boxShadow="xl"
+        borderRadius="lg"
+        p={6}
+        m={4}
+        maxW="600px"
+        textAlign="center"
+      ></Box>
 
       {/* <ShopsCategoriesReviewsPage/> */}
       

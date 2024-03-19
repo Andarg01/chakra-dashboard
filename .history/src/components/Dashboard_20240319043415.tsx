@@ -115,7 +115,7 @@ const Dashboard: React.FC = () => {
       </Box>
       <Box
        flex="1"
-      //  boxShadow="xl"
+       boxShadow="xl"
        borderRadius="lg"
        p={6}
        m={4}

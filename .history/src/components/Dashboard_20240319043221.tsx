@@ -115,7 +115,7 @@ const Dashboard: React.FC = () => {
       </Box>
       <Box
        flex="1"
-      //  boxShadow="xl"
+       boxShadow="xl"
        borderRadius="lg"
        p={6}
        m={4}
@@ -134,7 +134,7 @@ const Dashboard: React.FC = () => {
       >
    <PopularProductsPage/>
    
-      </Box>
+      
 
    
 
@@ -162,6 +162,7 @@ const Dashboard: React.FC = () => {
           <Bar dataKey="count" fill="#00800080"  />
         </BarChart>
       </Box> 
+      </Box>
 
       {/* Shop Statistics */}
       <Box

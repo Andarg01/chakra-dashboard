@@ -149,7 +149,7 @@ const Dashboard: React.FC = () => {
         borderRadius="lg"
         p={6}
         m={4}
-        maxW="600px"
+        maxW="900px"
         textAlign="center"
       >
       

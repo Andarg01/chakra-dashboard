@@ -129,14 +129,25 @@ const Dashboard: React.FC = () => {
       borderRadius="lg"
       p={6}
       m={4}
-      maxW="600px"
+      maxW="800px"
       textAlign="center"
       >
    <PopularProductsPage/>
    
       </Box>
-
-   
+{/* 
+      <Box
+        flex="1"
+        
+        boxShadow="xl"
+        borderRadius="lg"
+        p={6}
+        m={4}
+        maxW="300px"
+        textAlign="center"
+      >
+        <ShopsCategoriesReviewsPage/>
+      </Box> */}
 
       {/* <ShopsCategoriesReviewsPage/> */}
       

@@ -142,7 +142,26 @@ const Dashboard: React.FC = () => {
       
       {/* Product Statistics */}
 
-       <Box
+      <Box
+      flex="1"
+      boxShadow="xl"
+      borderRadius="lg"
+      p={6}
+      m={4}
+      maxW="600px"
+      textAlign="center"
+    >
+      <Text fontSize="xl" mb={4}>
+        Product Statistics
+      </Text>
+      <BarChart width={300} height={250} data={productData}>
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="count" fill="#00800080" />
+      </BarChart>
+    </Box>
+
+       {/* <Box
         flex="1"
         
         boxShadow="xl"
@@ -161,7 +180,7 @@ const Dashboard: React.FC = () => {
           <Legend />
           <Bar dataKey="count" fill="#00800080"  />
         </BarChart>
-      </Box> 
+      </Box>  */}
 
       {/* Shop Statistics */}
       <Box

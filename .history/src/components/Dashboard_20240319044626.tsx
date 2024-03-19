@@ -124,6 +124,7 @@ const Dashboard: React.FC = () => {
       >
       <Statics/>
       </Box>
+      <Flex direction="row" justify="between">
       <Box flex="1"
       // boxShadow="xl"
       borderRadius="lg"
@@ -136,11 +137,40 @@ const Dashboard: React.FC = () => {
    
       </Box>
 
-   
+      <Box
+        flex="1"
+        boxShadow="xl"
+        borderRadius="lg"
+        p={6}
+        m={4}
+        maxW="400px"
+        textAlign="center"
+        
+      >
+        <Text fontSize="xl" mb={4}>
+          Review Statistics
+        </Text>
+        <LineChart width={400} height={300} data={reviewData}>
+          <Tooltip />
+          <Line type="monotone" dataKey="rating" stroke="rgba(0, 128, 0, 0.8)" />
+        </LineChart>
+        <Box textAlign="left">
+          <Text fontSize="lg">
+            Average Rating: {getAverageRating(reviewData)}
+          </Text>
+          <Text fontSize="lg">Total Reviews: {reviewData.length}</Text>
+          <Box>
+          {/* <ReviewPage/> */}
+          </Box>       
+        </Box>                 
+      </Box>
+      </Flex>
+
 
       {/* <ShopsCategoriesReviewsPage/> */}
       
       {/* Product Statistics */}
+      <Flex  direction="row" justify="between">
 
        <Box
         flex="1"
@@ -149,7 +179,7 @@ const Dashboard: React.FC = () => {
         borderRadius="lg"
         p={6}
         m={4}
-        maxW="600px"
+        maxW="300px"
         textAlign="center"
       >
       
@@ -170,7 +200,7 @@ const Dashboard: React.FC = () => {
         borderRadius="lg"
         p={6}
         m={4}
-        maxW="400px"
+        maxW="300px"
         textAlign="center"
       >
         <Text fontSize="xl" mb={4}>
@@ -192,9 +222,10 @@ const Dashboard: React.FC = () => {
           </Pie>
         </PieChart>
       </Box>
+      </Flex>
 
       {/* Review Statistics */}
-      <Flex direction="row" justify="between">
+      {/* <Flex direction="row" justify="between">
       <Box
         flex="1"
         boxShadow="xl"
@@ -222,7 +253,7 @@ const Dashboard: React.FC = () => {
           </Box>       
         </Box>                 
       </Box>
-      </Flex>
+      </Flex> */}
     </Flex>
   );
 };

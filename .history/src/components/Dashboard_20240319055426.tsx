@@ -176,7 +176,7 @@ const Dashboard: React.FC = () => {
         <Text fontSize="xl" mb={4}>
           Shop Statistics
         </Text>
-        <PieChart width={400} height={300}>
+        <PieChart width={400} height={700}>
           <Pie
             data={shopData}
             cx="50%"

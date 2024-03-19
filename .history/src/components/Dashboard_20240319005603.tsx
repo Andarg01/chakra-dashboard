@@ -129,20 +129,71 @@ const Dashboard: React.FC = () => {
       borderRadius="lg"
       p={6}
       m={4}
-      maxW="600px"
+      maxW="800px"
       textAlign="center"
       >
    <PopularProductsPage/>
    
       </Box>
-
-   
+{/* 
+      <Box
+        flex="1"
+        
+        boxShadow="xl"
+        borderRadius="lg"
+        p={6}
+        m={4}
+        maxW="300px"
+        textAlign="center"
+      >
+        <ShopsCategoriesReviewsPage/>
+      </Box> */}
 
       {/* <ShopsCategoriesReviewsPage/> */}
       
       {/* Product Statistics */}
 
-       <Box
+      <Box
+  display="flex"
+  flex="1"
+  boxShadow="xl"
+  borderRadius="lg"
+  p={6}
+  m={4}
+  maxW="600px"
+>
+  <Box flex="1">
+    <Text fontSize="xl" mb={4}>
+      Product Statistics
+    </Text>
+    <BarChart width={300} height={250} data={productData}>
+      <Tooltip />
+      <Legend />
+      <Bar dataKey="count" fill="#00800080" />
+    </BarChart>
+  </Box>
+  <Box flex="1" ml={4}>
+    <Text fontSize="xl" mb={4}>
+      Product Information
+    </Text>
+    <Text fontWeight="bold" mb={2}>
+      Name:
+    </Text>
+    <Text mb={4}>{product.name}</Text>
+    <Text fontWeight="bold" mb={2}>
+      Price:
+    </Text>
+    <Text mb={4}>{product.price}</Text>
+    <Text fontWeight="bold" mb={2}>
+      Description:
+    </Text>
+    <Text mb={4}>{product.description}</Text>
+    {/* Add more product information fields here as needed */}
+  </Box>
+</Box>
+
+
+       {/* <Box
         flex="1"
         
         boxShadow="xl"
@@ -161,7 +212,7 @@ const Dashboard: React.FC = () => {
           <Legend />
           <Bar dataKey="count" fill="#00800080"  />
         </BarChart>
-      </Box> 
+      </Box>  */}
 
       {/* Shop Statistics */}
       <Box

@@ -142,7 +142,28 @@ const Dashboard: React.FC = () => {
       
       {/* Product Statistics */}
 
-       <Box
+      <Box
+  flex="1"
+  boxShadow="xl"
+  borderRadius="lg"
+  p={6}
+  m={4}
+  width="100%" // Make the card fit the width of the container
+  maxW="600px" // Set a maximum width for the card
+  textAlign="center"
+>
+  <Text fontSize="xl" mb={4}>
+    Product Statistics
+  </Text>
+  <BarChart width="100%" height={250} data={productData}>
+    <Tooltip />
+    <Legend />
+    <Bar dataKey="count" fill="#00800080" />
+  </BarChart>
+</Box>
+
+
+       {/* <Box
         flex="1"
         
         boxShadow="xl"
@@ -161,7 +182,7 @@ const Dashboard: React.FC = () => {
           <Legend />
           <Bar dataKey="count" fill="#00800080"  />
         </BarChart>
-      </Box> 
+      </Box>  */}
 
       {/* Shop Statistics */}
       <Box
